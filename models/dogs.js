@@ -11,7 +11,7 @@ var dogSchema = new Schema({
         require: true
     },
     weight: {
-        type: String,
+        type: Number,
         required: true
     }
 }, {

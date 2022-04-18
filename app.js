@@ -4,15 +4,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
-const url = 'mongodb://127.0.0.1/exam';
+const url = 'mongodb://localhost:27017/ami';
 const connect = mongoose.connect(url);
+connect.then((db) => {
+  console.log('Connected correctly to the server');
+}, (err) => {
+  console.log(err);
+});
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var dogRouter = require('./routes/dogRouter');
 const { db } = require('./models/dogs');
-
 
 
 var app = express();

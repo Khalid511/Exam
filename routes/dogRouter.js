@@ -12,6 +12,15 @@ dogRouter.route('/')
         res.json(dog);
     }, (err) => next(err))
     .catch((err) => next(err));
-});
+})
+.post((req, res, next) => {
+    Dogs.create(req.body)
+    .then((dog) => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(dog);
+    }, (err) => next(err))
+    .catch((err) => next(err));
+})
 
 module.exports = dogRouter;
