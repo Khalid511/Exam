@@ -1,0 +1,83 @@
+FORMAT: 1A
+HOST: https://polls.apiblueprint.org/
+
+# Exam
+
+This is a REST API 
+
+## Questions Collection [/questions]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+    {
+        "_id": "625cfd0f4e25c275f7be7ce1",
+        "name": "5",
+        "color": "blue",
+        "weight": 25,
+        "createdAt": "2022-04-18T05:54:23.346Z",
+        "updatedAt": "2022-04-18T05:54:23.346Z",
+        "__v": 0
+    },
+    {
+        "_id": "625d006911767fbc467973fe",
+        "name": "huibd",
+        "color": "blue",
+        "weight": 25,
+        "createdAt": "2022-04-18T06:08:41.344Z",
+        "updatedAt": "2022-04-18T06:08:41.344Z",
+        "__v": 0
+    },
+    {
+        "_id": "625d010df69cfb651ba6e6e6",
+        "name": "huibd",
+        "color": "blue",
+        "weight": 25,
+        "createdAt": "2022-04-18T06:11:25.945Z",
+        "updatedAt": "2022-04-18T06:11:25.945Z",
+        "__v": 0
+    },
+    {
+        "_id": "625d0151f69cfb651ba6e6e9",
+        "name": "huibd",
+        "color": "blue",
+        "weight": 25,
+        "createdAt": "2022-04-18T06:12:33.687Z",
+        "updatedAt": "2022-04-18T06:12:33.687Z",
+        "__v": 0
+    }
+]
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+    "name": "huibd",
+    "color": "blue",
+    "weight": 25
+}
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+    "name": "huibd",
+    "color": "blue",
+    "weight": 25,
+    "_id": "625d083db1c8250a35842bd9",
+    "createdAt": "2022-04-18T06:42:05.914Z",
+    "updatedAt": "2022-04-18T06:42:05.914Z",
+    "__v": 0
+}
